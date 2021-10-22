@@ -9,7 +9,7 @@
 
 <script>
 import { login } from '@/common/api/login'
-import { searchProduct } from '@/common/api/product'
+import { getUserInfo } from '@/services/info'
 export default {
   data() {
     return {
@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     fetchInfo() {
-      searchProduct(this.searchForm)
+      getUserInfo(this.searchForm)
         .then(res => {
           console.log('search---', res)
         })

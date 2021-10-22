@@ -34,7 +34,6 @@ module.exports = [
     response: (config) => {
       const { username } = config.body
       const token = tokens[username]
-
       // mock error
       if (!token) {
         return {
@@ -54,11 +53,27 @@ module.exports = [
     type: 'post',
     response: (config) => {
       const { body } = config
-      console.log('body---', body)
       return {
         code: '200',
-        data: '',
+        data: {},
       }
     },
   },
+  {
+    url: '/api/common/user',
+    type: 'post',
+    response: (config) => {
+      const { body } = config
+      return {
+        code: '200',
+        data: {
+          UserInfo: {
+            name: 'Jacky',
+            age: 18,
+            role: 'DR'
+          }
+        },
+      }
+    },
+  }
 ]

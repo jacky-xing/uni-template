@@ -96,3 +96,5 @@ export class HttpService {
 
   }
 }
+const service = new HttpService()
+export default service
